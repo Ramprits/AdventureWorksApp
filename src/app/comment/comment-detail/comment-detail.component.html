@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="card col-md-6 col-sm-12" style="margin-top:20px;">
+    <div class="card-block">
+      <h4 class="card-title text-primary">{{comment?.id}}</h4>
+      <a class="card-text">{{comment?.email}}</a>
+      <p class="card-text">{{comment?.body}}</p>
+    </div>
+  </div>
+  <button [routerLink]="['/comments']" class="btn btn-sm btn-primary">Back</button>
+</div>

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
-import { EmployeeComponent } from 'app/employee/employee.component';
-import { EmployeeDetailComponent } from 'app/employee/employee-detail/employee-detail.component';
+import { CommentComponent } from 'app/comment/comment.component';
+import { CommentDetailComponent } from 'app/comment/comment-detail/comment-detail.component';
 
 const routes: Routes = [
   {
@@ -10,17 +10,19 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'employee',
-    component: EmployeeComponent
+    path: 'comments',
+    component: CommentComponent
   },
   {
-    path: 'employee/:id',
-    component: EmployeeDetailComponent
+    path: 'comments/:id',
+    component: CommentDetailComponent
   },
+
   {
     path: '',
     redirectTo: 'dashboard', pathMatch: 'full'
-  }
+  },
+
 ];
 
 @NgModule({

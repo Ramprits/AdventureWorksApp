@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'yo';
+  // tslint:disable-next-line:member-ordering
 }

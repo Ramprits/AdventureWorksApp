@@ -10,13 +10,11 @@ import 'rxjs/add/operator/catch';
 export class CommentService {
   private baseUrl = 'https://jsonplaceholder.typicode.com/comments';
   constructor(private http: Http) { }
-
   getComments(): Observable<any[]> {
     return this.http.get(this.baseUrl)
       .map((response: Response) => response.json());
   }
-
-  getComment(id: any) {
+  getComment(id: number) {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get(url)
       .map((response: Response) => response.json());

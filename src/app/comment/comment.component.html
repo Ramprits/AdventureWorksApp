@@ -1,14 +1,20 @@
 <div class="container">
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped table-bordered table-responsive" >
     <tr class="bg-primary text-capitalize" style="color:white;">
       <td>postId</td>
       <td>id</td>
       <td>name</td>
       <td>email</td>
       <td>body</td>
+      <td>Action</td>
     </tr>
     <tr *ngFor="let comment of (comments ? comments.slice(0,100):[]); let i=index">
-      <td>{{comment.postId}}</td>
+      <td>
+        <div [ngSwitch]="comment.postId">
+          <div *ngSwitchCase="10" class="bg-danger">10</div>
+          <div *ngSwitchDefault>{{comment.postId}}</div>
+        </div>
+      </td>
       <td>{{comment.id}}</td>
       <td>
         <a [routerLink]="['/comments',comment.id]">
@@ -17,6 +23,9 @@
       </td>
       <td>{{comment.email}}</td>
       <td>{{comment.body}}</td>
+      <td>
+        <a [routerLink]="['/comments', comment.id]" class="btn-link">Detail</a>
+      </td>
     </tr>
   </table>
 </div>
